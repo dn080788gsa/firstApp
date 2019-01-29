@@ -73,7 +73,7 @@ require("fs").readdirSync(normalizedPath).forEach(function(file) {
 // If a trigger is matched, the conversation will automatically fire!
 // You can tie into the execution of the script using the functions
 // controller.studio.before, controller.studio.after and controller.studio.validate
-if (process.env.studio_token) {
+/*if (process.env.studio_token) {
     controller.on('message_received,facebook_postback', function(bot, message) {
         if (message.text) {
             controller.studio.runTrigger(bot, message.text, message.user, message.channel, message).then(function(convo) {
@@ -110,4 +110,4 @@ function usage_tip() {
     console.log('Get Facebook token here: https://developers.facebook.com/docs/messenger-platform/implementation')
     console.log('Get a Botkit Studio token here: https://studio.botkit.ai/')
     console.log('~~~~~~~~~~');
-}
+}*/
