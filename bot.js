@@ -67,6 +67,18 @@ require("fs").readdirSync(normalizedPath).forEach(function(file) {
 });
 
 
+//подключаем монгоДБ
+var MongoClient = require('mongodb').MongoClient;
+
+var uri = "mongodb://facebook_bot:<PASSWORD>@facebookbot-shard-00-00-sutmq.mongodb.net:27017,facebookbot-shard-00-01-sutmq.mongodb.net:27017,facebookbot-shard-00-02-sutmq.mongodb.net:27017/test?ssl=true&replicaSet=facebookBot-shard-0&authSource=admin&retryWrites=true";
+MongoClient.connect(uri, function(err, client) {
+   const collection = client.db("test").collection("devices");
+   // perform actions on the collection object
+   console.log(collection);
+   client.close();
+});
+
+
 // This captures and evaluates any message sent to the bot as a DM
 // or sent to the bot in the form "@bot message" and passes it to
 // Botkit Studio to evaluate for trigger words and patterns.
