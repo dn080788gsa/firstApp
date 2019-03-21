@@ -12,9 +12,9 @@
     ],
         PREFIX = "my-library-id-prefix-";
 
-    function getItem(productID){
-        return items[productID];
+    function getItem(){
+        return items;
     }
     G.item = getItem; //Экспорт функции getItem() в глобальное пространство имён под именем createId
     
-}(this, productID));
+}(this, undefined));
